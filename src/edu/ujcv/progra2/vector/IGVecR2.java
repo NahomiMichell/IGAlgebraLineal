@@ -5,7 +5,8 @@ public class IGVecR2 {
     //privado los datos
     // un escalar que represente 'x' y 'y' los componentes del vector
 
-
+ private double x;
+ private double y;
     // publico los constructores por defecto, copia, y conveniencia. recuerden a bob
 
 
