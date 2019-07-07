@@ -33,7 +33,6 @@ public class IGVecR2 {
     }
 
     public IGVecR2 suma(IGVecR2 b){
-        //TODO: implementar
         IGVecR2 retval = new IGVecR2();
         retval.x = (x + b.x);
         retval.y = (y + b.y);
@@ -42,7 +41,6 @@ public class IGVecR2 {
     }
 
     public IGVecR2 resta(IGVecR2 b){
-        //TODO: implementar
         IGVecR2 retval = new IGVecR2();
         retval.x = (x - b.x);
         retval.y = (y - b.y);
@@ -51,21 +49,21 @@ public class IGVecR2 {
 
     //producto.
     public  IGVecR2 escalarPorVector(double alpha){
-        //TODO: implementar
-        return new IGVecR2();
+      IGVecR2 retval = new IGVecR2();
+          retval.x = (alpha * x);
+          retval.y = (alpha * y);
+        return retval;
     }
 
     public double productoPunto(IGVecR2 b){
-        //TODO: implementar
-        return 0.0;
+        double retval;
+        retval = (x * b.x) + (y * b.y);
+        return retval;
     }
 
-
     // no esta definido en R2.!!!!!
-    //public IGVecR2 productoCruz(IGVecR2 b){
-
+    // public IGVecR2 productoCruz(IGVecR2 b){
     //}
-
 
     public double determinante(){
         //TODO: implementar
@@ -73,7 +71,7 @@ public class IGVecR2 {
     }
 
     public double angulo(IGVecR2 b){
-        //TODO: implementar
+        double retval;
         return 0.0;
     }
 
