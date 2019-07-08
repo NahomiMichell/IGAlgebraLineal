@@ -36,7 +36,7 @@ public class IGVecR4 {
         retval.w = (w - b.w);
         return retval;
     }
-    
+
     public  IGVecR4 escalarPorVector(double alpha){
         IGVecR4 retval = new IGVecR4();
          retval.x = (alpha * x);
