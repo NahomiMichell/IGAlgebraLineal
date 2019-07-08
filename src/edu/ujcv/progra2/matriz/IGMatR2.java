@@ -51,13 +51,24 @@ public class IGMatR2 {
         return retval;
     }
 
-  // public IGMatR2 mul(IGMatR2 b){
-  // }
+     public IGMatR2 mul(IGMatR2 b){
+        IGMatR2 retval = new IGMatR2();
+        retval.setCol1(new IGVecR2(this.getF1().productoPunto(b.col1),this.getF2().productoPunto(b.col1)));
+        retval.setCol2(new IGVecR2(this.getF2().productoPunto(b.col2),this.getF2().productoPunto(b.col2)));
+        return retval;
+     }
+
+      public IGMatR2 escalarXmat(double escalar){
+        IGMatR2 retval = new IGMatR2();
+        retval.col1.setX(this.col1.getX() * escalar);
+        retval.col1.setY(this.col1.getY() * escalar);
+        retval.col2.setX(this.col2.getX() * escalar);
+        retval.col2.setY(this.col2.getY() * escalar);
+        return retval;
+      }
 
  //public IGVecR2 colXMat(IGVecR2 col){}
 
-
-  // public IGMatR2 escalarXmat(double escalar){}
 
  // public static IGVecR2 rotacion (double angulo, IGVecR2 vector){}
 
