@@ -61,23 +61,33 @@ public class IGVecR2 {
         return retval;
     }
 
-    // no esta definido en R2.!!!!!
-    // public IGVecR2 productoCruz(IGVecR2 b){
-    //}
-
-    public double determinante(){
-        //TODO: implementar
-        return 0.0;
+    public double magnitud(IGVecR2 b){
+        return Math.sqrt((Math.pow(b.x,2) + Math.pow(b.y,2)));
     }
 
-    public double angulo(IGVecR2 b){
+    public double angulo( IGVecR2 a, IGVecR2 b){
         double retval;
-        return 0.0;
+        retval = Math.acos(a.productoPunto(b)/(magnitud(a) * magnitud(b)));
+        return Math.toDegrees(retval);
     }
 
-    public double magnitud(){
-        return Math.sqrt(productoPunto(this));
+    public double getX (){
+        return x;
     }
+
+    public void setX (double x){
+      this.x = x;
+    }
+
+    public double getY (){
+        return y;
+    }
+
+    public void setY (double y){
+        this.y = y;
+    }
+
+
 
 
 }

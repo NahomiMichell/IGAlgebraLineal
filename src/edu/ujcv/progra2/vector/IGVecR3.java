@@ -32,41 +32,70 @@ public class IGVecR3 {
     }
 
     public IGVecR3 resta(IGVecR3 b){
-
-        return new IGVecR3();
+        IGVecR3 retval = new IGVecR3();
+        retval.x = (x - b.x);
+        retval.y = (y - b.y);
+        retval.z = (z - b.z);
+        return retval;
     }
 
     //producto.
     public  IGVecR3 escalarPorVector(double alpha){
-        //TODO: implementar
-        return new IGVecR3();
+        IGVecR3 retval = new IGVecR3();
+        retval.x = (alpha * x);
+        retval.y = (alpha * y);
+        retval.z = (alpha * z);
+        return retval;
     }
 
     public double productoPunto(IGVecR3 b){
-        //TODO: implementar
-        return 0.0;
+        double retval;
+        retval = (x * b.x) + (y * b.y) + (z * b.z);
+        return retval;
     }
-
 
 
     public IGVecR3 productoCruz(IGVecR3 b){
-
-        return new IGVecR3();
+        IGVecR3 retval = new IGVecR3();
+         retval.x = ((y * b.z) - (z * b.y));
+         retval.y =((x * b.z) - (z * b.x));
+         retval.z = ((x * b.y)-(y - b.x));
+        return retval;
     }
 
 
-    public double determinante(){
-        //TODO: implementar
-        return 0.0;
+    public double magnitud(IGVecR3 b){
+
+        return Math.sqrt((Math.pow(b.x,2)+ Math.pow(b.y,2)+ Math.pow(b.z,2)));
     }
 
-    public double angulo(IGVecR3 b){
-        //TODO: implementar
-        return 0.0;
+    public double angulo(IGVecR3 a, IGVecR3 b){
+        double retval;
+        retval = Math.cos(a.productoPunto(b)/(magnitud(a)* magnitud(b)));
+        return Math.toDegrees(retval);
     }
 
-    public double magnitud(){
+    public double getX (){
+        return x;
+    }
 
-        return Math.sqrt(productoPunto(this));
+    public void setX (double x){
+        this.x = x;
+    }
+
+    public double getY (){
+        return y;
+    }
+
+    public void setY (double y){
+        this.y = y;
+    }
+
+    public double getZ (){
+        return z;
+    }
+
+    public void setZ (double z) {
+        this.z = z;
     }
 }
