@@ -9,11 +9,11 @@ public class IGMatR2 {
 
     // double[][] m;
 
-    IGVecR2 f1;
-    IGVecR2 f2;
+    private IGVecR2 F1;
+    private IGVecR2 F2;
 
-    IGVecR2 col1;
-    IGVecR2 col2;
+    private IGVecR2 col1;
+   private  IGVecR2 col2;
 
     public IGMatR2 (){
        col1 = new IGVecR2(1,0);
@@ -44,6 +44,13 @@ public class IGMatR2 {
         return retval;
     }
 
+    public IGVecR2 multvector (IGVecR2 v){
+        IGVecR2 retval = new IGVecR2();
+        retval.setX(v.productoPunto(this.getF2()));
+        retval.setY(v.productoPunto(this.getF2()));
+        return retval;
+    }
+
   // public IGMatR2 mul(IGMatR2 b){
   // }
 
@@ -69,5 +76,25 @@ public class IGMatR2 {
 
     public void setCol2(IGVecR2 col2) {
         this.col2 = col2;
+    }
+
+    public IGVecR2 getF1(){
+        IGVecR2 retval = new IGVecR2(col1.getX(),col2.getX());
+        return retval;
+    }
+
+    public void  setF1(IGVecR2 F1){
+        this.col1.setX(F1.getX());
+        this.col2.setX(F1.getY());
+    }
+
+    public IGVecR2 getF2(){
+        IGVecR2 retval = new IGVecR2(col1.getY(),col2.getY());
+        return retval;
+    }
+
+    public void  setF2 (IGVecR2 F2){
+        this.col1.setY(F2.getX());
+        this.col2.setY(F2.getY());
     }
 }
