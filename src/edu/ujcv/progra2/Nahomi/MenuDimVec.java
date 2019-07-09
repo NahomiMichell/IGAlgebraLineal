@@ -20,7 +20,7 @@ public class MenuDimVec {
     }
 
     public int LeeropcionR2() {
-        opcion = NM.getInteger("Ingrese una opción", "Intente de nuevo");
+        opcion = NM.getInteger("Ingrese una opción", "Ingreso una opción no valida. Intente de nuevo");
         return opcion;
     }
 
@@ -28,18 +28,57 @@ public class MenuDimVec {
         switch (opcion) {
             case 1:
 
-                IGVecR2 A1 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar");
-                IGVecR2 B1 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar" );
+                IGVecR2 A1 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGVecR2 B1 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar" );
                 IGVecR2 Nahomi1 = A1.suma(B1);
 
                 System.out.println("La suma de vectores es: \n");
                 imprimirIGVecR2 (Nahomi1);
-
                 break;
 
             case 2:
-                IGVecR2 A2 = LeerVectorR2( "Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es valido. Por Fvavor vuelva a intentar");
-                IGVecR2 B2;
+                IGVecR2 A2 = LeerVectorR2( "Vector 1","Ingrese el vector 1","El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGVecR2 B2 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGVecR2 Nahomi2 = A2.resta(B2);
+
+                System.out.println("La resta de vectores es; \n");
+                imprimirIGVecR2(Nahomi2);
+                break;
+
+            case 3:
+                double alpha = 0;
+                alpha = NM.getDouble("Ingrese el valor del escalar", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar");
+                IGVecR2 A3 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGVecR2 Nahomi3 = A3.escalarPorVector(alpha);
+
+                System.out.println("La multiplicación por un escalar es: \n");
+                imprimirIGVecR2(Nahomi3);
+                break;
+
+            case 4:
+                IGVecR2 A4 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGVecR2 B4 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                double Nahomi4 = A4.productoPunto(B4);
+
+                System.out.println("El restultado del producto punto es: " + Nahomi4);
+                break;
+
+            case 5:
+                IGVecR2 A5 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGVecR2 B5 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                double Nahomi5 = A5.magnitud(B5);
+
+                System.out.println("El resultado de la magnitud vectorial es: " + Nahomi5);
+                break;
+
+            case 6:
+                IGVecR2 A6 = LeerVectorR2("Vector 1","Ingrese el vector 1","El caracter que ingreso NO es válido. Por favor vuelva a intentar" );
+                IGVecR2 B6 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                double Nahomi6 = A6.angulo(A6,B6);
+
+                System.out.println("El angulo entre dos vectores es: " + Nahomi6);
+                break;
+
 
         }
 
@@ -48,8 +87,8 @@ public class MenuDimVec {
    public IGVecR2 LeerVectorR2 (String nombreVec, String mensaje, String mensajeError) {
        IGVecR2 A = new IGVecR2(1.0, 1.1);
 
-       A.setX(NM.getDouble("Ingrese el primer vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
-       A.setY(NM.getDouble("Ingrese el segundo vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar "));
+       A.setX(NM.getDouble("Ingrese el primer vector", "El caracter que ingreso no es válido. Por favor vuelva a intentar"));
+       A.setY(NM.getDouble("Ingrese el segundo vector", "El caracter que ingreso no es válido. Por favor vuelva a intentar "));
 
        return new IGVecR2(A);
    }
@@ -63,7 +102,7 @@ public class MenuDimVec {
       return new IGVecR3(A);
        }
     public IGVecR4 LeerVectorR4 (String nombreVec, String mensaje, String mesajeError){
-        IGVecR4 A = new IGVecR4(1.0, 1.1, 0.3, 0.5);
+        IGVecR4 A = new IGVecR4 (1.0, 1.1, 0.3, 0.5);
 
         A.setX(NM.getDouble("Ingrese el primer vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
         A.setY(NM.getDouble("Ingrese el segundo vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
