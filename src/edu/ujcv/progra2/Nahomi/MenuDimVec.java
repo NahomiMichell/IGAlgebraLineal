@@ -27,7 +27,19 @@ public class MenuDimVec {
     public int operandoR2(int opcion) {
         switch (opcion) {
             case 1:
-                IGVecR2 A1 = LeerVectorR2()
+
+                IGVecR2 A1 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar");
+                IGVecR2 B1 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar" );
+                IGVecR2 Nahomi1 = A1.suma(B1);
+
+                System.out.println("La suma de vectores es: \n");
+                imprimirIGVecR2 (Nahomi1);
+
+                break;
+
+            case 2:
+                IGVecR2 A2 = LeerVectorR2( "Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es valido. Por Fvavor vuelva a intentar");
+                IGVecR2 B2;
 
         }
 
@@ -51,7 +63,27 @@ public class MenuDimVec {
       return new IGVecR3(A);
        }
     public IGVecR4 LeerVectorR4 (String nombreVec, String mensaje, String mesajeError){
-        IGVecR4 A = new IGVecR4(1.0, 1.1, 0.3, );
+        IGVecR4 A = new IGVecR4(1.0, 1.1, 0.3, 0.5);
+
+        A.setX(NM.getDouble("Ingrese el primer vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
+        A.setY(NM.getDouble("Ingrese el segundo vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
+        A.setZ(NM.getDouble("Ingrese el tercer vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
+        A.setW(NM.getDouble("Ingrese el cuarto vector", "El caracter que ingreso no es válido. Por Favor vuelva a intentar"));
+
+        return new IGVecR4(A);
+    }
+
+    public void imprimirIGVecR2 (IGVecR2 a){
+        System.out.println("(" + a.getX() +","+ a.getY()+ ")");
+    }
+
+    public void imprimirIGVecR3(IGVecR3 a){
+
+        System.out.println("(" + a.getX() +","+ a.getY() +","+ a.getZ()+")");
+    }
+
+    public void imprimirVecR4 (IGVecR4 a){
+        System.out.println("(" + a.getX() +","+ a.getY() +","+ a.getZ() +","+ a.getW()+")");
     }
 
 }
