@@ -67,10 +67,14 @@ public class IGMatR2 {
         return retval;
       }
 
- //public IGVecR2 colXMat(IGVecR2 col){}
+     //public IGVecR2 colXMat(IGVecR2 col1){
+      //}
 
 
- // public static IGVecR2 rotacion (double angulo, IGVecR2 vector){}
+   // public IGVecR2 rotacion (double angulo, IGVecR2 v){
+//        IGVecR2 retval = new IGVecR2();
+  //      return retval;
+   // }
 
 
     public IGVecR2 getCol1() {
