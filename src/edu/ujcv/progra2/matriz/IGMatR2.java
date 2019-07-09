@@ -71,10 +71,15 @@ public class IGMatR2 {
       //}
 
 
-   // public IGVecR2 rotacion (double angulo, IGVecR2 v){
-//        IGVecR2 retval = new IGVecR2();
-  //      return retval;
-   // }
+        public IGMatR2 rotacion (double angulo, IGMatR2 b){
+          IGMatR2 retval = new IGMatR2();
+          retval.F1.setX(this.F1.getX() * Math.cos(angulo));
+          retval.F1.setY(this.F1.getY() * (- Math.sin(angulo)));
+          retval.F2.setX(this.F2.getX() * Math.cos(angulo));
+          retval.F2.setY(this.F2.getY()* Math.sin(angulo));
+
+      return retval;
+   }
 
 
     public IGVecR2 getCol1() {
