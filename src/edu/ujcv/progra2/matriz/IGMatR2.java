@@ -53,7 +53,7 @@ public class IGMatR2 {
 
      public IGMatR2 mul(IGMatR2 b){
         IGMatR2 retval = new IGMatR2();
-        retval.setCol1(new IGVecR2(this.getF1().productoPunto(b.col1),this.getF2().productoPunto(b.col1)));
+        retval.setCol1(new IGVecR2(this.getF1().productoPunto(b.col1),this.getF1().productoPunto(b.col1)));
         retval.setCol2(new IGVecR2(this.getF2().productoPunto(b.col2),this.getF2().productoPunto(b.col2)));
         return retval;
      }
@@ -69,7 +69,6 @@ public class IGMatR2 {
 
      //public IGVecR2 colXMat(IGVecR2 col1){
       //}
-
 
         public IGMatR2 rotacion (double angulo, IGMatR2 b){
           IGMatR2 retval = new IGMatR2();
