@@ -12,7 +12,7 @@ public class MenuDimMat {
     public int opcion;
     LectorDeTecladoValidado NM = LectorDeTecladoValidado.getInstance();
 
-    public void mostrarOpcionesR2 (){
+    public void mostrarOpcionesMatR2 (){
         System.out.println("Matrices de orden 2");
         System.out.println("\n 1. suma");
         System.out.println("\n 2. resta");
@@ -24,7 +24,7 @@ public class MenuDimMat {
 
     }
 
-    public int leerOpcionR2 (){
+    public int leerOpcionMatR2 (){
         opcion = NM.getInteger("Ingrese una opcion", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
         return opcion;
     }
@@ -63,6 +63,7 @@ public class MenuDimMat {
                 v.setX(NM.getDouble("Ingrese el primer numero vector","Error! Ha ingresado un caracter no valido"));
                 v.setY(NM.getDouble("Ingrese el segundo numero vector","Error! Ha ingresado un caracter no valido"));
                 IGVecR2 Naho4 = mat8.multvector(v);
+
                 System.out.println("La multiplicacion de matriz por vector es \n" );
                 System.out.println("|\t"+ Naho4.getX()+"\t|");
                 System.out.println("|\t"+ Naho4.getY()+"\t|");
@@ -74,7 +75,7 @@ public class MenuDimMat {
                 IGMatR2 mat9 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
                 IGMatR2 Naho5 = mat9.escalarXmat(alpha);
 
-                System.out.println("La multiplicacion por un escalar es: ");
+                System.out.println("La multiplicacion por un escalar es:\n ");
                 imprimirMatR2(Naho5);
                 break;
             case 6:
@@ -83,7 +84,7 @@ public class MenuDimMat {
                 IGMatR2 mat10 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
                 IGMatR2 Naho6 = mat10.rotacion(angulo,mat10);
 
-                System.out.println("La rotación de Matriz de orden 2 es:");
+                System.out.println("La rotación de Matriz de orden 2 es:\n");
                 imprimirMatR2(Naho6);
 
                 break;
@@ -94,6 +95,158 @@ public class MenuDimMat {
         }
         return opcion;
     }
+    public void mostrarOpcionesMatR3() {
+        System.out.println("\t Matrices de orden 3");
+        System.out.println("\n 1.Suma");
+        System.out.println("\n 2.Resta");
+        System.out.println("\n 3. Multiplicacion");
+        System.out.println("\n 4. Multiplicacion por un escalar");
+        System.out.println("\n 5. Multiplicacion por un vector");
+        System.out.println("\n 6. Multiplicacion por una matriz");
+        System.out.println("\n 7. Regresar");
+    }
+
+    public int leerOpcionesMatR3() {
+        opcion = NM.getInteger("Ingrese una opcion", "Ha ingresado una opcion erronea");
+        return opcion;
+    }
+
+    public int procesarOpcionMatR3(int opcion) {
+        switch (opcion) {
+            case 1:
+                IGMatR3 mat1 = leerMatR3("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR3 mat2 = leerMatR3("\n Matriz 2", "Ingrese la matriz 2", "Error ha ingresado un caracter no valido");
+                IGMatR3 naho1 = mat1.suma(mat2);
+
+                System.out.println("La suma de matrices es \n");
+                imprimirMatR3(naho1);
+                break;
+
+            case 2:
+                IGMatR3 mat3 = leerMatR3("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR3 mat4 = leerMatR3("Matriz 2", "Ingrese la matriz 2", "Error ha ingresado un caracter no valido");
+                IGMatR3 naho2 = mat3.resta(mat4);
+                System.out.println("La suma de matrices es \n");
+                imprimirMatR3(naho2);
+                break;
+            case 3:
+                double alpha = 0;
+                alpha = NM.getDouble("Ingrese el escalar", "Error ha ingresado un caracter no valido");
+                IGMatR3 mat5 = leerMatR3("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR3 res3 = mat5.escalarXmat(alpha);
+                System.out.println("La multiplicacion de una matriz por un escalar es \n");
+                imprimirMatR3(res3);
+                break;
+
+            case 4:
+
+                IGMatR3 mat6 = leerMatR3 ("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGVecR3 v = new IGVecR3(0,1,0);
+                v.setX(NM.getDouble("Ingrese el primer numero del vector","Error! Ha ingresado un caracter no valido"));
+                v.setY(NM.getDouble("Ingrese el segundo numero del vector","Error! Ha ingresado un caracter no valido"));
+                v.setZ(NM.getDouble("Ingrese el tercer numero del vector","Error! Ha ingresado un caracter no valido"));
+                IGVecR3 naho4 = mat6.multvector(v);
+
+                System.out.println("La multiplicacion de matriz por vector es \n" );
+                System.out.println("|\t"+ naho4.getX()+"\t|");
+                System.out.println("|\t"+ naho4.getY()+"\t|");
+                System.out.println("|\t"+ naho4.getZ()+"\t|");
+                break;
+
+            case 5:
+
+                IGMatR3 mat7 = leerMatR3("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR3 mat8 = leerMatR3("\n Matriz 2", "Ingrese la matriz 2", "Error ha ingresado un caracter no valido");
+                IGMatR3 naho5 = mat7.mul(mat8);
+
+                System.out.println("La multiplicacion de matrices es \n");
+                imprimirMatR3(naho5);
+                break;
+
+            case 6:
+                System.out.println("Has regresado al menu principal \n \n");
+                break;
+        }
+        return opcion;
+    }
+
+    public void mostrarOpcionesMatR4() {
+        System.out.println("\t \t \t \t Matrices de orden 4");
+        System.out.println("\n 1.Suma");
+        System.out.println("\n 2.Resta");
+        System.out.println("\n 3.Multiplicacion por un escalar");
+        System.out.println("\n 4. Multiplicacion por un vector");
+        System.out.println("\n 5. Multiplicacion por una matriz");
+        System.out.println("\n 6. Regresar al menu principal");
+    }
+
+    public int leerOpcionesMatR4() {
+        opcion = NM.getInteger("Ingrese una opcion", "Ha ingresado una opcion erronea");
+        return opcion;
+    }
+
+    public int procesarOpcionMatR4(int opcion) {
+        switch (opcion) {
+            case 1:
+                IGMatR4 mat1 = leerMatR4("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR4 mat2 = leerMatR4("\n Matriz 2", "Ingrese la matriz 2", "Error ha ingresado un caracter no valido");
+                IGMatR4 naho1 = mat1.suma(mat2);
+
+                System.out.println("La suma de matrices es \n");
+                imprimirMatR4(naho1);
+                break;
+
+            case 2:
+                IGMatR4 mat3 = leerMatR4("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR4 mat4 = leerMatR4("\n Matriz 2", "Ingrese la matriz 2", "Error ha ingresado un caracter no valido");
+                IGMatR4 res2 = mat3.suma(mat4);
+                System.out.println("La suma de matrices es \n");
+                imprimirMatR4(res2);
+                break;
+
+            case 3:
+                double alpha = 0;
+                alpha = NM.getDouble("Ingrese el escalar", "Error ha ingresado un caracter no valido");
+                IGMatR4 mat5 = leerMatR4("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGMatR4 res3 = mat5.mulEscalar(alpha);
+
+                System.out.println("La multiplicacion de una matriz por un escalar es \n");
+                imprimirMatR4(res3);
+                break;
+
+            case 4:
+                IGMatR4 mat6 = leerMatR4("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGVecR4 v = new IGVecR4(0, 1, 0, 0);
+                v.setX(NM.getDouble("Ingrese el primer numero del vector", "Error! Ha ingresado un caracter no valido"));
+                v.setY(NM.getDouble("Ingrese el segundo numero del vector", "Error! Ha ingresado un caracter no valido"));
+                v.setZ(NM.getDouble("Ingrese el tercer numero del vector", "Error! Ha ingresado un caracter no valido"));
+                v.setW(NM.getDouble("Ingrese el tercer numero del vector", "Error! Ha ingresado un caracter no valido"));
+                IGVecR4 res4 = mat6.mulVector(v);
+
+                System.out.println("La multiplicacion de matriz por vector es \n");
+                System.out.println("|\t" + res4.getX() + "\t|");
+                System.out.println("|\t" + res4.getY() + "\t|");
+                System.out.println("|\t" + res4.getZ() + "\t|");
+                System.out.println("|\t" + res4.getW() + "\t|");
+                break;
+
+            case 5:
+               IGMatR4 mat7 = leerMatR4("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+               IGMatR4 mat8 = leerMatR4("\n Matriz 2", "Ingrese la matriz 2", "Error ha ingresado un caracter no valido");
+               IGMatR4 res5 = mat7.mul(mat8);
+
+                System.out.println("La multiplicacion de matrices es \n");
+                imprimirMatR4(res5);
+                break;
+
+            case 6:
+                System.out.println("Has regresado al menu principal \n \n");
+                break;
+        }
+        return opcion;
+
+    }
+
     public IGMatR2 leerMatR2(String nombreMatriz, String mensaje, String mensajeError) {
         IGVecR2 col1 = new IGVecR2(1, 0);
         IGVecR2 col2 = new IGVecR2(0, 1);
