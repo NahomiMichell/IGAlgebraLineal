@@ -9,7 +9,7 @@ public class MenuMatrices {
     LectorDeTecladoValidado NM = LectorDeTecladoValidado.getInstance();
 
     public void mostrarOpciones () {
-        System.out.println("\t  Matrices");
+        System.out.println("  Matrices");
         System.out.println("\n Dimensiones ");
         System.out.println("\n 1. Matriz 2x2");
         System.out.println("\n 2. Matriz 3x3");

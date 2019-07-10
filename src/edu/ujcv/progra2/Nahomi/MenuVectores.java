@@ -12,8 +12,8 @@ MenuDimVec MDV = new MenuDimVec();
 
     public void presentarOpciones(){
 
-        System.out.println("\t \t Vectores");
-        System.out.println("\n \t Dimensiones \n");
+        System.out.println(" Vectores");
+        System.out.println("\n Dimensiones \n");
         System.out.println("\n 1. Vector en R2");
         System.out.println("\n 2. Vector en R3");
         System.out.println("\n 3.Vector en R4");

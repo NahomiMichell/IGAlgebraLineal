@@ -10,7 +10,7 @@ public int opcion;
 
     public void mostrarOpciones (){
 
-    System.out.println("\t Calculadora de Algebra Lineal");
+    System.out.println(" Calculadora de Algebra Lineal");
     System.out.println("\n 1. Vectores");
     System.out.println("\n 2.  Matrices");
     System.out.println("\n 3. Salir");

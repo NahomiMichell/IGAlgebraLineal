@@ -10,7 +10,7 @@ public class MenuDimVec {
     public int opcion;
 
     public void mostrarOpcionR2() {
-        System.out.println("\t Vectores en dos dimensiones ");
+        System.out.println("Vectores en dos dimensiones ");
         System.out.println("\n 1. Suma");
         System.out.println("\n 2. Resta");
         System.out.println("\n 3. Multiplicacion por un escalar");
@@ -66,8 +66,7 @@ public class MenuDimVec {
 
             case 5:
                 IGVecR2 A5 = LeerVectorR2("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                IGVecR2 B5 = LeerVectorR2("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                double Nahomi5 = A5.magnitud(B5);
+                double Nahomi5 = A5.magnitud(A5);
 
                 System.out.println("El resultado de la magnitud vectorial es: " + Nahomi5);
                 break;
@@ -145,8 +144,7 @@ public class MenuDimVec {
 
             case 5:
                 IGVecR3 A5 = LeerVectorR3("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                IGVecR3 B5 = LeerVectorR3("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                double Nahomi5 = A5.magnitud(B5);
+                double Nahomi5 = A5.magnitud(A5);
 
                 System.out.println("El resultado de la magnitud vectorial es: " + Nahomi5);
                 break;
@@ -231,8 +229,7 @@ public class MenuDimVec {
 
             case 5:
                 IGVecR4 A5 = LeerVectorR4("Vector 1", "Ingrese el vector 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                IGVecR4 B5 = LeerVectorR4("Vector 2", "Ingrese el vector 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                double Nahomi5 = A5.magnitud(B5);
+                double Nahomi5 = A5.magnitud(A5);
 
                 System.out.println("El resultado de la magnitud vectorial es: " + Nahomi5);
                 break;

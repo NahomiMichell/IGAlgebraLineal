@@ -9,9 +9,6 @@ public class IGMatR2 {
 
     // double[][] m;
 
-    private IGVecR2 F1;
-    private IGVecR2 F2;
-
     private IGVecR2 col1;
    private  IGVecR2 col2;
 
@@ -72,11 +69,11 @@ public class IGMatR2 {
 
         public IGMatR2 rotacion (double angulo, IGMatR2 b){
           IGMatR2 retval = new IGMatR2();
-          retval.F1.setX(this.F1.getX() * Math.cos(angulo));
-          retval.F1.setY(this.F1.getY() * (- Math.sin(angulo)));
-          retval.F2.setX(this.F2.getX() * Math.cos(angulo));
-          retval.F2.setY(this.F2.getY()* Math.sin(angulo));
-
+          retval.col1.setX(this.getF1().getX() * Math.cos(angulo));
+          retval.col2.setX(this.getF1().getY() * (-Math.sin(angulo)));
+          retval.col1.setY(this.getF2().getX() * Math.cos(angulo));
+          retval.col2.setY(this.getF2().getY() * Math.sin(angulo));
+          
       return retval;
    }
 
