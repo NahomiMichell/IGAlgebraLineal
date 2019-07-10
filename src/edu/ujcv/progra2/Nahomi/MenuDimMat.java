@@ -52,17 +52,45 @@ public class MenuDimMat {
                 case 3:
                     IGMatR2 mat6 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
                     IGMatR2 mat7 = leerMatR2("Matriz 2", "Ingrese la matriz 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                    IGMatR2 Naho3 = mat6.mul(mat7);
+
+                    System.out.println("La multiplicacion de matrices es: ");
+                    imprimirMatR2(Naho3);
                     break;
             case 4:
-                double alpha = 0;
-                alpha = NM.getDouble("Ingrese el escalar", "El caracter que ingreso NO es valido. Por favor vuelva a intentar");
-                IGMatR2 mat8 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
-                IGMatR2 Naho3 = mat8.escalarXmat(alpha);
-
-                System.out.println("La multiplicacion por un escalar es: ");
-                imprimirMatR2(Naho3);
+                IGMatR2 mat8 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "Error ha ingresado un caracter no valido");
+                IGVecR2 v = new IGVecR2(0,1);
+                v.setX(NM.getDouble("Ingrese el primer numero vector","Error! Ha ingresado un caracter no valido"));
+                v.setY(NM.getDouble("Ingrese el segundo numero vector","Error! Ha ingresado un caracter no valido"));
+                IGVecR2 Naho4 = mat8.multvector(v);
+                System.out.println("La multiplicacion de matriz por vector es \n" );
+                System.out.println("|\t"+ Naho4.getX()+"\t|");
+                System.out.println("|\t"+ Naho4.getY()+"\t|");
                 break;
 
+            case 5:
+                double alpha = 0;
+                alpha = NM.getDouble("Ingrese el escalar", "El caracter que ingreso NO es valido. Por favor vuelva a intentar");
+                IGMatR2 mat9 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGMatR2 Naho5 = mat9.escalarXmat(alpha);
+
+                System.out.println("La multiplicacion por un escalar es: ");
+                imprimirMatR2(Naho5);
+                break;
+            case 6:
+                double angulo = 0;
+                angulo = NM.getDouble("Ingrese un amgulo", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar");
+                IGMatR2 mat10 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGMatR2 Naho6 = mat10.rotacion(angulo,mat10);
+
+                System.out.println("La rotación de Matriz de orden 2 es:");
+                imprimirMatR2(Naho6);
+
+                break;
+
+            case 7:
+                System.out.println("Estas de vuelta en el menu principal \n");
+                break;
         }
         return opcion;
     }
