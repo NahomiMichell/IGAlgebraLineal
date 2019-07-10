@@ -18,6 +18,12 @@ public class IGVecR4 {
         this.z = z;
         this.w = w;
     }
+    public IGVecR4 (IGVecR4 b){
+        this.x = b.x;
+        this.y = b.y;
+        this.z = b.z;
+        this.w = b.w;
+    }
 
     public IGVecR4 suma(IGVecR4 b){
         IGVecR4 retval = new IGVecR4();
