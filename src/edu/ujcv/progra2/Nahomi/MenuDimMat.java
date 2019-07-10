@@ -41,12 +41,26 @@ public class MenuDimMat {
                 break;
 
             case 2:
-                IGMatR2 mat3 = leerMatR2("Matriz 3", "Ingrese la matriz 3","El caracter que ingreso NO es válido. Por favor intente de nuevo");
-                IGMatR2 mat4 = leerMatR2("Matriz 4", "Ingrese la matriz 4", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGMatR2 mat3 = leerMatR2("Matriz 1", "Ingrese la matriz 1","El caracter que ingreso NO es válido. Por favor intente de nuevo");
+                IGMatR2 mat4 = leerMatR2("Matriz 2", "Ingrese la matriz 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
                  IGMatR2 Naho2 = mat3.resta(mat4);
 
                 System.out.println("la resta de marices es: ");
                 imprimirMatR2(Naho2);
+                break;
+
+                case 3:
+                    IGMatR2 mat6 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                    IGMatR2 mat7 = leerMatR2("Matriz 2", "Ingrese la matriz 2", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                    break;
+            case 4:
+                double alpha = 0;
+                alpha = NM.getDouble("Ingrese el escalar", "El caracter que ingreso NO es valido. Por favor vuelva a intentar");
+                IGMatR2 mat8 = leerMatR2("Matriz 1", "Ingrese la matriz 1", "El caracter que ingreso NO es válido. Por favor vuelva a intentar");
+                IGMatR2 Naho3 = mat8.escalarXmat(alpha);
+
+                System.out.println("La multiplicacion por un escalar es: ");
+                imprimirMatR2(Naho3);
                 break;
 
         }
