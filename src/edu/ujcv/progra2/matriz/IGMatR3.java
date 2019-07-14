@@ -76,7 +76,16 @@ public class IGMatR3 {
 
      public static IGVecR3 rotacionX (double angulo, IGVecR3 v){
        IGMatR3 rot = new IGMatR3();
-        rot.col1.setX(1);
+        rot.getCol1().setX(1);
+        rot.getCol1().setY(0);
+        rot.getCol1().setZ(0);
+        rot.getCol2().setX(0);
+        rot.getCol2().setY(Math.cos(angulo));
+        rot.getCol2().setZ(Math.sin(angulo));
+        rot.getCol3().setX(0);
+        rot.getCol3().setY(-Math.sin(angulo));
+        rot.getCol3().setZ(Math.cos(angulo));
+
         return rot.multvector(v);
     }
 
