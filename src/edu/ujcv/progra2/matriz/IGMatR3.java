@@ -70,12 +70,26 @@ public class IGMatR3 {
         return retval;
     }
 
-    // public static IGVecR2 rotacionZ (double angulo, IGVecR2 vector){
-//
-//    }
+    public IGVecR3 rotZ (double angulo, IGVecR3 vector){
+        IGMatR3 rot = new IGMatR3();
 
-     public static IGVecR3 rotacionX (double angulo, IGVecR3 v){
+        rot.getCol1().setX(Math.cos(angulo));
+        rot.getCol1().setY(Math.sin(angulo));
+        rot.getCol1().setZ(0);
+        rot.getCol2().setX(-Math.sin(angulo));
+        rot.getCol2().setY(Math.cos(angulo));
+        rot.getCol2().setZ(0);
+        rot.getCol3().setX(0);
+        rot.getCol3().setY(0);
+        rot.getCol3().setZ(1);
+
+        IGVecR3 retval = (new IGVecR3(rot.multvector(vector)));
+        return retval;
+   }
+
+     public IGVecR3 rotX (double angulo, IGVecR3 vec){
        IGMatR3 rot = new IGMatR3();
+
         rot.getCol1().setX(1);
         rot.getCol1().setY(0);
         rot.getCol1().setZ(0);
@@ -86,12 +100,26 @@ public class IGMatR3 {
         rot.getCol3().setY(-Math.sin(angulo));
         rot.getCol3().setZ(Math.cos(angulo));
 
-        return rot.multvector(v);
+        IGVecR3 jaime = (new IGVecR3(rot.multvector(vec)));
+        return jaime;
     }
 
-    // public static IGVecR2 rotacionY (double angulo, IGVecR2 vector){
-//
-//    }
+     public IGVecR3 rotY (double angulo, IGVecR3 vec){
+        IGMatR3 rot = new IGMatR3();
+
+        rot.getCol1().setX(Math.cos(angulo));
+        rot.getCol1().setY(0);
+        rot.getCol1().setZ(-Math.sin(angulo));
+        rot.getCol2().setX(0);
+        rot.getCol2().setY(1);
+        rot.getCol2().setZ(0);
+        rot.getCol3().setX(Math.sin(angulo));
+        rot.getCol3().setY(0);
+        rot.getCol3().setZ(Math.cos(angulo));
+
+        IGVecR3 retval = (new IGVecR3(rot.multvector(vec)));
+        return retval;
+}
     public IGVecR3 getF1(){
         IGVecR3 retval = new IGVecR3(col1.getX(),col2.getX(), col3.getX());
         return retval;

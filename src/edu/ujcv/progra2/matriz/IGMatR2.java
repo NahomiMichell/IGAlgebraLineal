@@ -72,7 +72,9 @@ public class IGMatR2 {
          rot.col1.setX(Math.cos(angulo));
          rot.col2.setX(-Math.sin(angulo));
          rot.col1.setY(Math.sin(angulo));
-         return rot.multvector(b);
+
+         IGVecR2 retval =(new IGVecR2(rot.multvector(b)));
+         return retval;
    }
 
 
