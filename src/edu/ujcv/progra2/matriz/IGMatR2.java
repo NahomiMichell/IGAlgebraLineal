@@ -67,14 +67,12 @@ public class IGMatR2 {
      //public IGVecR2 colXMat(IGVecR2 col1){
       //}
 
-        public IGMatR2 rotacion (double angulo, IGMatR2 b){
-          IGMatR2 retval = new IGMatR2();
-          retval.col1.setX(this.getF1().getX() * Math.cos(angulo));
-          retval.col2.setX(this.getF1().getY() * (-Math.sin(angulo)));
-          retval.col1.setY(this.getF2().getX() * Math.cos(angulo));
-          retval.col2.setY(this.getF2().getY() * Math.sin(angulo));
-          
-      return retval;
+        public IGVecR2 rotacion (double angulo, IGVecR2 b){
+         IGMatR2 rot = new IGMatR2();
+         rot.col1.setX(Math.cos(angulo));
+         rot.col2.setX(-Math.sin(angulo));
+         rot.col1.setY(Math.sin(angulo));
+         return rot.multvector(b);
    }
 
 

@@ -49,9 +49,9 @@ public class IGVecR2 {
 
     //producto.
     public  IGVecR2 escalarPorVector(double alpha){
-      IGVecR2 retval = new IGVecR2();
-          retval.x = (alpha * x);
-          retval.y = (alpha * y);
+        IGVecR2 retval = new IGVecR2();
+        retval.x = (alpha * x);
+        retval.y = (alpha * y);
         return retval;
     }
 

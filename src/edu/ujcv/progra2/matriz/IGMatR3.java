@@ -74,9 +74,11 @@ public class IGMatR3 {
 //
 //    }
 
-    // public static IGVecR2 rotacionX (double angulo, IGVecR2 vector){
-//
-//    }
+     public static IGVecR3 rotacionX (double angulo, IGVecR3 v){
+       IGMatR3 rot = new IGMatR3();
+        rot.col1.setX(1);
+        return rot.multvector(v);
+    }
 
     // public static IGVecR2 rotacionY (double angulo, IGVecR2 vector){
 //
