@@ -173,7 +173,7 @@ public class MenuDimVec {
     }
 
     public void mostrarOpcionR4() {
-        System.out.println("\t Vectores en dos dimensiones ");
+        System.out.println("\t Vectores en cuatro dimensiones ");
         System.out.println("\n 1. Suma");
         System.out.println("\n 2. Resta");
         System.out.println("\n 3. Multiplicacion por un escalar");

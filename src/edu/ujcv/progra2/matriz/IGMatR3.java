@@ -83,8 +83,7 @@ public class IGMatR3 {
         rot.getCol3().setY(0);
         rot.getCol3().setZ(1);
 
-        IGVecR3 retval = (new IGVecR3(rot.multvector(vector)));
-        return retval;
+        return rot.multvector(vector);
    }
 
      public IGVecR3 rotX (double angulo, IGVecR3 vec){
@@ -100,11 +99,10 @@ public class IGMatR3 {
         rot.getCol3().setY(-Math.sin(angulo));
         rot.getCol3().setZ(Math.cos(angulo));
 
-        IGVecR3 jaime = (new IGVecR3(rot.multvector(vec)));
-        return jaime;
+        return rot.multvector(vec);
     }
 
-     public IGVecR3 rotY (double angulo, IGVecR3 vec){
+     public IGVecR3 rotY (double angulo, IGVecR3 vec1){
         IGMatR3 rot = new IGMatR3();
 
         rot.getCol1().setX(Math.cos(angulo));
@@ -117,8 +115,7 @@ public class IGMatR3 {
         rot.getCol3().setY(0);
         rot.getCol3().setZ(Math.cos(angulo));
 
-        IGVecR3 retval = (new IGVecR3(rot.multvector(vec)));
-        return retval;
+        return rot.multvector(vec1);
 }
     public IGVecR3 getF1(){
         IGVecR3 retval = new IGVecR3(col1.getX(),col2.getX(), col3.getX());

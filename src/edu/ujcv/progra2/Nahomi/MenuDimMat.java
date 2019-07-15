@@ -79,18 +79,12 @@ public class MenuDimMat {
                 imprimirMatR2(Naho5);
                 break;
             case 6:
-                double angulo = 0;
-                angulo = NM.getDouble("Ingrese un angulo", "El caracter que ingreso NO es válido. Por Favor vuelva a intentar");
-
-                IGVecR2 ve = new IGVecR2();
-                ve.setX(NM.getDouble("Ingrese el primer numero del vector","Error! Ha ingresado un caracter no valido"));
-                ve.setY(NM.getDouble("Ingrese el segundo numero del vector","Error! Ha ingresado un caracter no valido"));
-                IGMatR2 Naho6 = new IGMatR2();
                 MenuDimVec mv = new MenuDimVec();
-
-                IGVecR2 NAH1 = Naho6.rotacion(angulo,ve);
-                mv.imprimirIGVecR2(NAH1);
-
+                double angulo = NM.getDouble("Ingrese el angulo", "Error");
+                IGVecR2 v1 = mv.LeerVectorR2("Vector 1","Ingrese el valor","error");
+                IGMatR2 naho = new IGMatR2();
+                IGVecR2 resul = naho.rotacion(Math.toRadians(angulo),v1);
+                mv.imprimirIGVecR2(resul);
                 break;
 
             case 7:
@@ -170,45 +164,30 @@ public class MenuDimMat {
                 break;
 
             case 6:
-                double angulo;
-                angulo = NM.getDouble("Ingrese un angulo", "Error! Ha ingresados un caracter no valido. Por favor vuelva a intentar");
-                IGVecR3 vec = new IGVecR3();
-                IGMatR3 mat = new IGMatR3();
                 MenuDimVec mv = new MenuDimVec();
-                vec.setX(NM.getDouble("Ingrese el primer numero del vector","Error! Ha ingresado un caracter no valido"));
-                vec.setY(NM.getDouble("Ingrese el segundo numero del vector","Error! Ha ingresado un caracter no valido"));
-                vec.setZ(NM.getDouble("Ingrese el tercer numero del vector","Error! Ha ingresado un caracter no valido"));
-
-                IGVecR3 naho6 = mat.rotX(angulo,vec);
-                mv.imprimirIGVecR3(naho6);
+                double angulo = NM.getDouble("Ingrese el angulo", "Error");
+                IGVecR3 v1 = mv.LeerVectorR3("Vector 1","Ingrese el valor","error");
+                IGMatR3 NC = new IGMatR3();
+                IGVecR3 resul2 = NC.rotX(Math.toRadians(angulo),v1);
+                mv.imprimirIGVecR3(resul2);
                 break;
 
             case 7:
-                double angulo1;
-                angulo1 = NM.getDouble("Ingrese un angulo", "Error! Ha ingresados un caracter no valido. Por favor vuelva a intentar");
-                IGVecR3 vec1 = new IGVecR3();
-                IGMatR3 per = new IGMatR3();
-                MenuDimVec MV = new MenuDimVec();
-                vec1.setX(NM.getDouble("Ingrese el primer numero del vector","Error! Ha ingresado un caracter no valido"));
-                vec1.setY(NM.getDouble("Ingrese el segundo numero del vector","Error! Ha ingresado un caracter no valido"));
-                vec1.setZ(NM.getDouble("Ingrese el tercer numero del vector","Error! Ha ingresado un caracter no valido"));
-
-                IGVecR3 naho7 = per.rotY(angulo1,vec1);
-                MV.imprimirIGVecR3(naho7);
+                MenuDimVec m = new MenuDimVec();
+                double an1 = NM.getDouble("Ingrese el angulo", "Error");
+                IGVecR2 v2 = m.LeerVectorR2("Vector 1","Ingrese el valor","error");
+                IGMatR2 nah = new IGMatR2();
+                IGVecR2 res = nah.rotacion(Math.toRadians(an1),v2);
+                m.imprimirIGVecR2(res);
                 break;
 
             case 8:
-                double ang2;
-                ang2 = NM.getDouble("Ingrese un angulo", "Error! Ha ingresados un caracter no valido. Por favor vuelva a intentar");
-                IGVecR3 v14 = new IGVecR3();
-                IGMatR3 est = new IGMatR3();
-                MenuDimVec MD = new MenuDimVec();
-                v14.setX(NM.getDouble("Ingrese el primer numero del vector","Error! Ha ingresado un caracter no valido"));
-                v14.setY(NM.getDouble("Ingrese el segundo numero del vector","Error! Ha ingresado un caracter no valido"));
-                v14.setZ(NM.getDouble("Ingrese el tercer numero del vector","Error! Ha ingresado un caracter no valido"));
-
-                IGVecR3 coffy = est.rotZ(ang2,v14);
-                MD.imprimirIGVecR3(coffy);
+                MenuDimVec m1 = new MenuDimVec();
+                double ang = NM.getDouble("Ingrese el angulo", "Error");
+                IGVecR2 v3 = m1.LeerVectorR2("Vector 1","Ingrese el valor","error");
+                IGMatR2 naho = new IGMatR2();
+                IGVecR2 coffy = naho.rotacion(Math.toRadians(ang),v3);
+                m1.imprimirIGVecR2(coffy);
                 break;
 
             case 9:
